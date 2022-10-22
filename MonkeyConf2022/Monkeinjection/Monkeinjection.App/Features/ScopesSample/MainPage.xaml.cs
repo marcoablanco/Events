@@ -1,9 +1,9 @@
-﻿namespace Monkeinjection.App;
+﻿namespace Monkeinjection.App.Features.ScopesSample;
 
-using Monkeinjection.App.Services;
+using Monkeinjection.App;
+using Monkeinjection.App.Features.ScopesSample.Services;
 using System;
 using System.Collections.ObjectModel;
-using System.Text;
 
 public partial class MainPage : ContentPage
 {
@@ -38,9 +38,9 @@ public partial class MainPage : ContentPage
 		CellModel line = new CellModel
 		{
 			Title = "Resuelto por el ServiceProvider Root.",
-			SingletonResult = singletonService.GetName(),
-			ScopeResult = scopeService.GetName(),
-			TransientResult = transientService.GetName(),
+			Line1 = singletonService.GetName(),
+			Line2 = scopeService.GetName(),
+			Line3 = transientService.GetName(),
 		};
 		items.Insert(0, line);
 	}
@@ -54,9 +54,9 @@ public partial class MainPage : ContentPage
 		CellModel line = new CellModel
 		{
 			Title = "Resuelto por el primer Scope.",
-			SingletonResult = singletonService.GetName(),
-			ScopeResult = scopeService.GetName(),
-			TransientResult = transientService.GetName(),
+			Line1 = singletonService.GetName(),
+			Line2 = scopeService.GetName(),
+			Line3 = transientService.GetName(),
 		};
 		items.Insert(0, line);
 	}
@@ -70,9 +70,9 @@ public partial class MainPage : ContentPage
 		CellModel line = new CellModel
 		{
 			Title = $"Resuelto por el Scope numero {countScopes}.",
-			SingletonResult = singletonService.GetName(),
-			ScopeResult = scopeService.GetName(),
-			TransientResult = transientService.GetName(),
+			Line1 = singletonService.GetName(),
+			Line2 = scopeService.GetName(),
+			Line3 = transientService.GetName(),
 		};
 		items.Insert(0, line);
 	}

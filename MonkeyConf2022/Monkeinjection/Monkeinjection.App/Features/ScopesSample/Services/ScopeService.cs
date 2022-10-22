@@ -1,4 +1,5 @@
-﻿namespace Monkeinjection.App.Services;
+﻿namespace Monkeinjection.App.Features.ScopesSample.Services;
+
 using System;
 
 internal class ScopeService : IScopeService

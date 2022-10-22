@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="Monkeinjection.App.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Monkeinjection.App"
-    Shell.FlyoutBehavior="Disabled">
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	   xmlns:generic="clr-namespace:Monkeinjection.App.Features.GenericRepositorySample"
+	   xmlns:log="clr-namespace:Monkeinjection.App.Features.LogSample"
+	   xmlns:scopes="clr-namespace:Monkeinjection.App.Features.ScopesSample"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	   x:Class="Monkeinjection.App.AppShell"
+	   Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+	<ShellContent Title="Tipos de dependecias" Route="Scopes" 
+				  ContentTemplate="{DataTemplate scopes:MainPage}" />
+
+	<ShellContent Title="Dependecias genéricas" Route="Generic" 
+				  ContentTemplate="{DataTemplate generic:GenericRepositorySamplePage}" />
+
+	<ShellContent Title="Logs" Route="Log" 
+				  ContentTemplate="{DataTemplate log:LogSamplePage}" />
 
 </Shell>

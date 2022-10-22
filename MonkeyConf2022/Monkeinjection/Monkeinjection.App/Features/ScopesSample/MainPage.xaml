@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:app="clr-namespace:Monkeinjection.App"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Monkeinjection.App.MainPage">
+             x:Class="Monkeinjection.App.Features.ScopesSample.MainPage">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<Style TargetType="Button">
@@ -39,9 +39,9 @@
 						<Border>
 							<VerticalStackLayout Padding="5,10">
 								<Label Text="{Binding Title}" FontAttributes="Bold" LineBreakMode="TailTruncation" />
-								<Label Text="{Binding SingletonResult}" LineBreakMode="TailTruncation" />
-								<Label Text="{Binding ScopeResult}" LineBreakMode="TailTruncation" />
-								<Label Text="{Binding TransientResult}" LineBreakMode="TailTruncation" />
+								<Label Text="{Binding Line1}" LineBreakMode="TailTruncation" />
+								<Label Text="{Binding Line2}" LineBreakMode="TailTruncation" />
+								<Label Text="{Binding Line3}" LineBreakMode="TailTruncation" />
 							</VerticalStackLayout>
 						</Border>
 					</DataTemplate>

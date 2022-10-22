@@ -48,4 +48,27 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Features\GenericRepositorySample\GenericRepositorySamplePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\LogSample\LogSamplePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Features\LogSample\Services\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.ApplicationInsights" Version="2.21.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.21.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.EventSource" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.TraceSource" Version="6.0.0" />
+	</ItemGroup>
+
 </Project>
