@@ -348,3 +348,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+MonkeyConf2022/Monkeinjection/Monkeinjection.App/Common/AppKeys.cs
