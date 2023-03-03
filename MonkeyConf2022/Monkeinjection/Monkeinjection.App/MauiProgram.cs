@@ -66,22 +66,6 @@ public static class MauiProgram
 					});
 			});
 
-		builder.Services.AddSingleton<AppShell>()
-						.AddSingleton<MainPage>()
-						.AddSingleton<LogSamplePage>()
-						.AddSingleton<GenericRepositorySamplePage>();
-
-		// Log sample
-
-		// Repository sample
-		builder.Services.AddTransient(_ => Preferences.Default);
-		builder.Services.AddSingleton(typeof(IRepositoryService<>), typeof(RepositoryService<>));
-
-		// Scopes sample
-		builder.Services.AddTransient<ITransientService>(_ => new TransientService())
-						.AddScoped<IScopeService>(_ => new ScopeService())
-						.AddSingleton<ISingletonService>(_ => new SingletonService());
-
 		return builder.Build();
 	}
 }
