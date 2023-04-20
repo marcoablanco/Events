@@ -14,10 +14,10 @@
 
 		<Label Text="{Binding Result}" />
 
-		<!--<OnPlatform x:TypeArguments="Entry">
+		<OnPlatform x:TypeArguments="Entry">
 			<On Platform="Android">
-				<Entry />
+				<Entry BackgroundColor="Green" />
 			</On>
-		</OnPlatform>-->
+		</OnPlatform>
 	</VerticalStackLayout>
 </ContentPage>
