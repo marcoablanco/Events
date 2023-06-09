@@ -2,6 +2,7 @@
 
 using ReactiveUI;
 using System.Reactive;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ public class LoginViewModel : ReactiveObject
 	private readonly ILoginService loginService;
 	private string userName;
 	private string password;
+	private bool isLoading;
 
 	public LoginViewModel(IServiceProvider serviceProvider)
 	{
@@ -30,12 +32,21 @@ public class LoginViewModel : ReactiveObject
 		set => this.RaiseAndSetIfChanged(ref password, value);
 	}
 
+	public bool IsLoading
+	{
+		get => isLoading;
+		set => this.RaiseAndSetIfChanged(ref isLoading, value);
+	}
+
 	public IObservable<bool> CanLoginCommand => this.WhenAnyValue(vm => vm.UserName, vm => vm.Password)
 													.Select(x => !string.IsNullOrEmpty(x.Item1) && !string.IsNullOrEmpty(x.Item2));
 
 	public ReactiveCommand<Unit, Unit> LoginCommand { get; }
 
-
+	internal void OnActivated(CompositeDisposable disposables)
+	{
+		disposables.Add(LoginCommand.IsExecuting.BindTo(this, vm => vm.IsLoading));
+	}
 
 	private async Task LoginCommandExecuteAsync()
 	{

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rx:ReactiveContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+						xmlns:main="clr-namespace:SampleApp2.Feature.Main"
+						xmlns:rx="clr-namespace:ReactiveUI.Maui;assembly=ReactiveUI.Maui"
+						xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						x:Class="SampleApp2.Feature.Main.MainPage"
+						x:TypeArguments="main:MainViewModel"
+						Title="MainPage">
+	<Grid RowDefinitions="80, *">
+		<Entry x:Name="TxtSearch" />
+		
+		<CollectionView x:Name="ListMain"
+						Grid.Row="1">
+			<CollectionView.ItemTemplate>
+				<DataTemplate x:DataType="x:String">
+					<Label Text="{Binding .}" FontSize="Medium"
+						   Margin="10"
+						   HorizontalTextAlignment="Center">
+						<Label.Shadow>
+							<Shadow Brush="Red" Offset="5,5"
+									Radius="5" />
+						</Label.Shadow>
+					</Label>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+	</Grid>
+</rx:ReactiveContentPage>

@@ -1,6 +1,7 @@
 ﻿namespace SampleApp2;
 
 using SampleApp2.Feature.Login;
+using SampleApp2.Feature.Main;
 
 public partial class App : Application
 {
@@ -8,6 +9,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new LoginPage { ViewModel = new LoginViewModel(serviceProvider) } ;
-	}
+		//MainPage = new Feature.Main.MainPage { ViewModel = new MainViewModel() };
+        MainPage = new LoginPage { ViewModel = new LoginViewModel(serviceProvider) } ;
+    }
 }
