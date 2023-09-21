@@ -9,7 +9,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		//MainPage = new Feature.Main.MainPage { ViewModel = new MainViewModel() };
-        MainPage = new LoginPage { ViewModel = new LoginViewModel(serviceProvider) } ;
+		MainPage = new Feature.Main.MainPage { ViewModel = new MainViewModel() };
+        //MainPage = new LoginPage { ViewModel = new LoginViewModel(serviceProvider) } ;
     }
 }
