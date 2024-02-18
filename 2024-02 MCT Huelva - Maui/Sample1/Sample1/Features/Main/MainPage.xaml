@@ -19,5 +19,11 @@
 				<Entry BackgroundColor="Green" />
 			</On>
 		</OnPlatform>
+
+		<RoundRectangle x:Name="RectBall"
+						Fill="Red" CornerRadius="10" Stroke="Black" StrokeThickness="2" 						
+						Margin="0,200,0,0"
+						WidthRequest="20" HeightRequest="20" />
+
 	</VerticalStackLayout>
 </ContentPage>

@@ -9,6 +9,15 @@ public partial class MainPage : ContentPage
 		ModifyEntry();
 	}
 
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+		Animation animation = new Animation();
+		animation.Add(0, 0.5, new Animation(x => RectBall.TranslationY = x, 0, -100, Easing.CubicOut));
+		animation.Add(0.5, 1, new Animation(x => RectBall.TranslationY = x, -100, 0, Easing.BounceOut));
+		animation.Commit(this, "BallAnimation", 16, 1000, null, null, () => true);
+	}
+
 	private void ModifyEntry()
 	{
 		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("MyCustomization", (handler, view) =>
