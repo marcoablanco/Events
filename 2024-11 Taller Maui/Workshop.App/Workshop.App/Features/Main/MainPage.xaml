@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:main="clr-namespace:Workshop.App.Features.Main"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Workshop.App.Features.Main.MainPage"
-			 x:DataType="main:MainViewModel">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Workshop.App.Features.Main.MainPage"
+			 x:DataType="main:MainViewModel"
+			 x:Name="Main">
 
 	<Grid RowDefinitions="50,*">
 
@@ -15,11 +16,18 @@
 			<CollectionView.ItemTemplate>
 				<DataTemplate x:DataType="main:PostModel">
 					<Border StrokeShape="RoundRectangle 10"
-						Margin="10" Padding="20">
+							Margin="10" Padding="20">
 						<VerticalStackLayout>
+							
 							<Label Text="{Binding Title.Rendered}"
-							   FontAttributes="Bold"/>
+								   FontAttributes="Bold"/>
+							
 							<Label Text="{Binding Excerpt.Rendered}" TextType="Html" />
+							
+							<Button Text="Leer más ->"
+									Command="{Binding TapCommand, Source={RelativeSource AncestorType={Type main:MainViewModel}}}"
+									CommandParameter="{Binding .}"
+									HorizontalOptions="End" />
 						</VerticalStackLayout>
 					</Border>
 				</DataTemplate>

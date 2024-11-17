@@ -1,15 +1,15 @@
-﻿namespace Workshop.App.Features.Main;
+namespace Workshop.App.Features.PostDetail;
 
-public partial class MainPage : ContentPage
+public partial class PostDetailPage : ContentPage
 {
-	public MainPage()
+	public PostDetailPage()
 	{
 		InitializeComponent();
-		BindingContext = ViewModel = new MainViewModel();
+		BindingContext = ViewModel = new PostDetailViewModel();
 	}
 
 
-	public MainViewModel ViewModel { get; }
+	public PostDetailViewModel ViewModel { get; }
 
 
 	protected override async void OnAppearing()
@@ -25,4 +25,3 @@ public partial class MainPage : ContentPage
 		}
 	}
 }
-

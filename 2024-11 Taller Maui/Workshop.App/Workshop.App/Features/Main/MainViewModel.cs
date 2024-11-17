@@ -2,20 +2,28 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
+using System.Windows.Input;
 
 public partial class MainViewModel : ObservableObject
 {
 	private const string url = "https://notodoesprogramacion.net/";
 	//private const string url = "https://geekstorming.wordpress.com/";
 	private const string getPost = "wp-json/wp/v2/posts";
-	private List<PostModel> allPosts;
+	private List<PostModel>? allPosts;
+
+	public MainViewModel()
+	{
+		TapCommand = new Command(async post => await Shell.Current.GoToAsync("PostDetail", true, new Dictionary<string, object> { { "Post", post } }));
+	}
 
 
 	[ObservableProperty]
-	private List<PostModel> posts;
+	private List<PostModel>? posts;
 
 	[ObservableProperty]
-	private string userSearch;
+	private string? userSearch;
+
+	public ICommand TapCommand { get; }
 
 
 
@@ -34,7 +42,7 @@ public partial class MainViewModel : ObservableObject
 		try
 		{
 			HttpClientHandler handler = new HttpClientHandler();
-			
+
 			HttpClient client = new HttpClient(handler, true);
 			client.BaseAddress = new Uri(url);
 
