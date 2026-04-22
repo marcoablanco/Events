@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:main="clr-namespace:Workshop.App.Features.Main"
+	xmlns:pd="clr-namespace:Workshop.App.Features.PostDetail"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Workshop.App.AppShell"
+	Shell.FlyoutBehavior="Disabled"
+	Shell.NavBarIsVisible="True"
+	Shell.NavBarHasShadow="True"
+	Title="Workshop.App">
+
+	<ShellContent Title="Home"
+				  ContentTemplate="{DataTemplate main:MainPage}"
+				  Route="Main" />
+</Shell>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:pd="clr-namespace:Workshop.App.Features.PostDetail"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Workshop.App.Features.PostDetail.PostDetailPage"
+			 x:DataType="pd:PostDetailViewModel"
+			 Title="{Binding Title}">
+
+	<Border StrokeShape="RoundRectangle 10"
+			Margin="10" Padding="20">
+		<ScrollView>
+
+			<Label Text="{Binding Content}" TextType="Html" />
+
+		</ScrollView>
+	</Border>
+</ContentPage>
